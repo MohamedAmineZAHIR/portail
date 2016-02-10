@@ -1,0 +1,70 @@
+#central_pic {
+    max-width: 70%; 
+	height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+/**/
+.nav-logo {
+    max-width: 40px;
+	height: auto;
+    margin-left: 5px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    padding-top: 1px;
+    float: right;
+    
+}
+
+.logo {
+   /* margin-left: auto;
+    margin-right: auto;*/
+}
+
+.accordion-logos {
+    max-width: 40px;
+	height: auto;
+}
+/*.hid-accordion {
+    height: 5px;
+}*/
+
+/**/
+.tools {
+    position: relative;
+    left: 70%;
+    padding-bottom: 5%/*80px*/;
+    /*height: 50px;*/
+    width: 450px;
+}
+
+.tool-label {
+    color: dimgray;
+    font-size: 170%;
+    padding-left: 40px;
+}
+
+/**/
+.accordion {
+    margin: 30px;
+    padding: 10px;
+}
+
+.accordion-buttons {
+    margin: 10px;
+}
+
+.head-accordion-label {
+    padding-top: 30px;
+    /*width: 110px;*/
+}
+
+/**/
+.proj-desc {
+    margin: 20px;
+    font-weight: 550;
+    text-align:justify; /*Pour justifier le paragraphe*/
+    
+}

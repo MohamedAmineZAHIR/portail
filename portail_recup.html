@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html ng-app="protail">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portail</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+        <!-- For simple styling and transitions, include "angular-accordion.css". You can edit styles to meed your look and feel -->
+        <link rel="stylesheet" type="text/css" href="css/ang-accordion.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        
+        <!--Acordion-->
+        <link rel="stylesheet" type="text/css" href="css/ang-accordion.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script type="text/javascript" src="js/ang-accordion.js"></script>
+        
+        <!--Modal-->
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        
+        <script type="text/javascript" src="js/script.js"></script>
+        <!--<script type="text/javascript" src="js/directives.js"></script>-->
+        
+    </head>
+    <body ng-controller="Ctrl">
+       
+        <div class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" angularJShref="http://10.24.193.116/mediawiki/index.php/CHRONOS" id="s"><span>Portail Conf</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                  <input type="search" placeholder="Filtre">
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!--Second navbar-->
+        <div class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="#">Wiki</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                  aria-expanded="false"><i class="fa fa-caret-down"></i>CAP</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="#">Action</a>
+                    </li>
+                    <li>
+                      <a href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a href="#">Something else here</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#">Separated link</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#">One more separated link</a>
+                    </li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                      aria-expanded="false"><i class="fa fa-caret-down"></i>Delivery<br></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="#">Action</a>
+                        </li>
+                        <li>
+                          <a href="#">Another action</a>
+                        </li>
+                        <li>
+                          <a href="#">Something else here</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a href="#">Separated link</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                          <a href="#">One more separated link</a>
+                        </li>
+                      </ul>
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!--center picture-->
+        <div class="blocktext">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img id="central_pic" src="img\solution.png" class="img-responsive img-thumbnail">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div>
+            <ang-accordion>
+                
+                <modal title="Visualisation" visible="showModal_PPD">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                </modal>
+                
+                 <collapsible-item item-title="ProdPlus DATA">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_DATA" id="s"><h1>ProdPlus DATA</h1></a>
+                            <h3>Description</h3>
+                            <p>Prodplus Data est une application développée pour OBS pour configurer les routeurs du réseau.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <modal title="Visualisation" visible="showModal_PPI">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                </modal>
+                
+                <collapsible-item item-title="ProdPlus International">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_International" id="s"><h1>ProdPlus International</h1></a>
+                            <h3>A subtitle</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                              ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+                              dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+                              nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                              Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                              enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum
+                              felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+                              elementum semper nisi.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <modal title="Visualisation" visible="showModal_PPIP">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                </modal>
+                
+                 <collapsible-item item-title="ProdPlus IPTEL">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_IPTEL" id="s"><h1>ProdPlus IPTEL</h1></a>
+                            <h3>Description</h3>
+                            <p>Prodplus IPTEL est une application développée pour OBS pour configurer les routeurs du réseau pour la téléphonie par IP en France.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <modal title="Visualisation" visible="showModal">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                </modal>
+                 <!--<modal title="Login form" visible="showModal">
+                    <form role="form">
+                      <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" />
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                      </div>
+                      <button type="submit" class="btn btn-default" ng-click="setting()">Submit</button>
+                    </form>
+                  </modal>-->
+                
+                 <collapsible-item item-title="CHRONOS"> 
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="img/Chronos.PNG" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <h1><a href="http://10.24.193.116/mediawiki/index.php/CHRONOS" id="s"><span>CHRONOS</span></a></h1>
+                            <h3>Description</h3>
+                            CHRONOS est un portail de Production qui permet :
+                            <ul>
+                                <li>de produire des services internet de manière ordonnancée.</li>
+                                <li>de réaliser la configuration des services sur les plateformes de services</li>
+                                <li>de tenir à jour un référentiel de données techniques</li>
+                                <li>d'être interfacé avec d’autres SI tels que OPERA, OPUS</li>
+                                <li>d'effectuer des opérations de maintenance sur les produits gérés et installés(SAV)</li>
+                                <li>Chronos est en contact direct avec le Selfcare.</li>
+                            </ul>
+                            <br />  
+                              
+                            <div class="col-md-8">
+                                <collapsible-item item-title="Outils">
+                                    <ul>
+                                        <li ng-repeat="tool in chronos_tools">
+                                            <span><img class="tools" src="img/{{tool}}.png"> {{tool}}</span>
+                                        </li>
+                                    </ul>
+                                </collapsible-item>
+                             </div>
+                              <h3>Liens</h3>
+                              <div class="col-md-3"> 
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="btn btn-sm btn-success">Home</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="btn btn-primary btn-sm" ng-click="toggleModal()">Play</a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <modal title="Visualisation" visible="showModal_AIR">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                </modal>
+                
+                <collapsible-item item-title="Air-Messir">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://ununsplash.imgix.net/photo-1415302199888-384f752645d0?w=1024&amp;q=50&amp;fm=jpg&amp;s=823bdcc1b7ad955f5180efd352561016" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/Air_Messir" id="s"><h1>TMA Outil de Configuration 2016 - Air Messir</h1></a>
+                            <h3>Description</h3>
+                            <p>WBS Template for ADM projects
+                                Modèle de WBS pour les projets de type ADM.</p>
+                            <h3>Outils</h3>
+                            <div class="col-md-8">   
+                                
+                                <div id="photoflot">
+                                    <ul>
+                                        <li ng-repeat="tool in airMessir_tools">
+                                            <span><img class="tools" src="img/{{tool}}.png"> {{tool}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                              </div>
+                              <h3>Liens</h3>
+                              <div class="col-md-3">  
+                                
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="btn btn-sm btn-success">Home</a>
+                                    </div>
+                                    <br/>
+                                    <div class="col-md-3">
+                                        <a class="btn btn-primary btn-sm" ng-click="toggleModal()">Play</a>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <!--International manag tools-->
+                <collapsible-item item-title="SACRE">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_DATA" id="s"><h1>ProdPlus DATA</h1></a>
+                            <h3>Description</h3>
+                            <p>Prodplus Data est une application développée pour OBS pour configurer les routeurs du réseau.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <collapsible-item item-title="W@too">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_DATA" id="s"><h1>ProdPlus DATA</h1></a>
+                            <h3>Description</h3>
+                            <p>Prodplus Data est une application développée pour OBS pour configurer les routeurs du réseau.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+                
+                <collapsible-item item-title="CLARA">
+                    <div class="section section-info">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-md-6">
+                            <img src="https://unsplash.imgix.net/photo-1422405153578-4bd676b19036?w=1024&amp;q=50&amp;fm=jpg&amp;s=5ecc4c704ea97d85ea550f84a1499228" class="img-responsive">
+                          </div>
+                          <div class="col-md-6">
+                            <a href="http://10.24.193.116/mediawiki/index.php/ProdPlus_DATA" id="s"><h1>ProdPlus DATA</h1></a>
+                            <h3>Description</h3>
+                            <p>Prodplus Data est une application développée pour OBS pour configurer les routeurs du réseau.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </collapsible-item>
+            </ang-accordion>
+        </div>
+    </body>
+</html>
+

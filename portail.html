@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html ng-app="protail">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Portail</title>
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">
+        <!-- For simple styling and transitions, include "angular-accordion.css". You can edit styles to meed your look and feel -->
+        <link rel="stylesheet" type="text/css" href="css/ang-accordion.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        
+        <!--Acordion
+        <link rel="stylesheet" type="text/css" href="css/ang-accordion.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+        <script type="text/javascript" src="js/ang-accordion.js"></script>-->
+        
+        <!---->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-animate.js"></script>
+        <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+        
+        <!--Modal-->
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        
+        <script type="text/javascript" src="js/script.js"></script>
+        <!--<script type="text/javascript" src="js/directives.js"></script>-->
+        
+    </head>
+    <body ng-controller="Ctrl">
+       
+        <div class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" angularJShref="http://10.24.193.116/mediawiki/index.php/CHRONOS" id="s"><span>Portail Conf</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                  <!--<input type="search" placeholder="Filtre">-->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!--Second navbar-->
+        <div class="navbar navbar-default navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="http://10.24.193.116/mediawiki/index.php/Accueil">Wiki</a>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                  aria-expanded="false"><i class="fa fa-caret-down"></i>CAP</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li>
+                      <a href="https://myrhoom-fr.capgemini.com/">MyRHoom</a>
+                    </li>
+                  </ul>
+                </li>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                      aria-expanded="false"><i class="fa fa-caret-down"></i>Delivery<br></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li>
+                          <a href="https://clarity.capgemini.com/">Clarity</a>
+                        </li>
+                        <li>
+                          <a href="http://cip.fr.capgemini.com">Jenkins</a>
+                        </li>
+                        <li>
+                          <a href="http://sonarcip.fr.capgemini.com:8093/sonar/">Sonar</a>
+                        </li>
+                      </ul>
+                    </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!--center picture-->
+        <div class="blocktext">
+            <div class="section">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img id="central_pic" src="img\solution.png" class="img-responsive img-thumbnail">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <div>
+            <div ng-controller="AccordionCtrl">
+              <uib-accordion close-others="oneAtATime">
+                  
+                  <!-- ProdPlus DATA -->
+                  <modal title="Visualisation" visible="showModal_PPD">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open1">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">ProdPlus DATA</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in pp_data_tools" src="img/{{tool}}.png" />
+                          </div>
+                      </uib-accordion-heading>
+                     
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/ProdPlusDATA.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">ProdPlus Data est une application qui a pour but de configurer les équipements du réseau backbone d’OBS pour la France.</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openPPD">
+                                        <ul>
+                                            <li ng-repeat="tool in pp_data_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="http://10.24.193.116/mediawiki/index.php/ProdPlus_DATA">Home</a></span>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                  </uib-accordion-group>
+                  
+                  
+                  <!-- ProdPlus International -->
+                  <modal title="Visualisation" visible="showModal_PPI">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open2">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">ProdPlus International</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in pp_interna_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                      
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/ProdPlusInternational.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">ProdPlus International est une application qui a pour but de configurer les équipements réseaux des différents clients d’OBS afin de permettre à ces derniers d’avoir une liaison dédiée entre leurs différents sites.</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openPPI">
+                                        <ul>
+                                            <li ng-repeat="tool in pp_interna_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="http://10.24.193.116/mediawiki/index.php/ProdPlus_International">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                     </div>
+                  </uib-accordion-group>
+                  
+                  
+                  <!-- ProdPlus IPTEL -->
+                  <modal title="Visualisation" visible="showModal_PPIP">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">ProdPlus IPTEL</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in pp_iptel_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/ProdPlusIPTEL.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">De son coté, l’application ProdPlus Iptel, se charge de la partie configuration des équipements téléphoniques sur VOIP et TOIP pour les PME et grandes entreprises sur le réseau Français d’OBS.</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openPPIPTEL">
+                                      <ul>
+                                            <li ng-repeat="tool in pp_iptel_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="http://10.24.193.116/mediawiki/index.php/ProdPlus_IPTEL">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                  </uib-accordion-group>
+                  
+                  
+                  <!-- CHRONOS -->
+                  <modal title="Visualisation" visible="showModal">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open4">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">CHRONOS</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in chronos_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                     
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/Chronos.PNG" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4" >
+                                    <div class="proj-desc">
+                                        CHRONOS est un portail de production qui permet :
+                                        <ul>
+                                            <li>de produire des services internet de manière ordonnancée.</li>
+                                            <li>de réaliser la configuration des services sur les plateformes de services</li>
+                                            <li>de tenir à jour un référentiel de données techniques</li>
+                                            <li>d'être interfacé avec d’autres SI tels que OPERA, OPUS</li>
+                                            <li>d'effectuer des opérations de maintenance sur les produits gérés et installés(SAV)</li>
+                                            <li>Chronos est en contact direct avec le Selfcare.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openCH">
+                                      <ul>
+                                            <li ng-repeat="tool in chronos_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="http://10.24.193.116/mediawiki/index.php/CHRONOS">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                  </uib-accordion-group>
+                 
+                  
+                  <!-- AIR MESSIR -->
+                  <modal title="Visualisation" visible="showModal_AIR">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open5">
+                      <uib-accordion-heading>
+                        <label class="head-accordion-label">AIR-MESSIR</label><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in airMessir_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                     
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/AirMessir.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">AIR est une application permettant la configuration simplifiée d’un routeur. Un technicien dispose d’un PC où il aura installé au préalable l’application et va ensuite connecter son PC au routeur qu’il veut configurer sur le port série à l’aide du câble approprié. L’application Air va ensuite s’interfacer avec la console du routeur pour se connecter au serveur Messir distant, qui va envoyer des requêtes vers d’autres serveurs qui chargeront la configuration appropriée sur le routeur.<br />
+                                        Cette application, avant refonte, est entièrement réalisée en langage Perl et uniquement utilisable sur PC. Son uniquement moyen de connexion est par Telnet à travers le routeur. <br /> A terme, cette application devra être utilisable sur PC, tablette et Smartphone, et elle aura a disposition en plus de la connexion Telnet à travers le routeur, l’optionalité SSHv2 et la connexion mobile 4G. <br />L’architecture des serveurs Messir va aussi être entièrement revue pour des principes de sécurité et de pratique, ainsi que pour répondre aux nouveaux besoins.</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openAM">
+                                      <ul>
+                                            <li ng-repeat="tool in airMessir_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="http://10.24.193.116/mediawiki/index.php/Air_Messir">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                  </uib-accordion-group>
+                  
+                  
+                  <!-- SACRE -->
+                  <modal title="Visualisation" visible="showModal_SACRE">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open6">
+                      
+                          <uib-accordion-heading>
+                              <!--<div class="hid-accordion">--><label class="head-accordion-label">SACRE</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i><!--</div>-->
+                              <div class="tools">
+                                  <img class="nav-logo" ng-repeat="tool in sacre_tools" src="img/{{tool}}.png" />
+                              </div>
+                          </uib-accordion-heading>
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/SACRE.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">SACRE manage the different Intranets users offered by TRANSPAC and Global One to its clients. Creates, modifies, interrogates, and deletes Intranets or users</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openSCR">
+                                      <ul>
+                                            <li ng-repeat="tool in sacre_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                  </uib-accordion-group>
+                  
+                  <!-- W@too -->
+                  <modal title="Visualisation" visible="showModal_WATOO">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open7">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">W@too</label><i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in watoo_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/WATOO.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">W@too an extranet application for the clients of Transpac, main use is admin of the client network and access the usage statistics of its client and users</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openWT">
+                                      <ul>
+                                            <li ng-repeat="tool in watoo_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                      
+                  </uib-accordion-group>
+                  
+                  
+                  <!-- CLARA -->
+                  <modal title="Visualisation" visible="showModal_CLARA">
+                    <video controls src="videos/I1_croissance_roi_lion.ogv" height="400" width="550">Ici la description alternative</video>
+                  </modal>
+                  <uib-accordion-group class="accordion" is-open="status.open8">
+                      <uib-accordion-heading>
+                          <label class="head-accordion-label">CLARA</label> <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                          <div class="tools">
+                              <img class="nav-logo" ng-repeat="tool in clara_tools" src="img/{{tool}}.png" />
+                          </div>  
+                      </uib-accordion-heading>
+                      
+                      <div class="section section-info">
+                          <div class="container-fluid">
+                              <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="img/project/CLARA.png" class="img-responsive">
+                                </div>
+                                <div class="col-sm-4">
+                                    <p class="proj-desc">CLARA manages the public and private IP addresses plans using the TRANSPAC network.</p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <span class="accordion-buttons"><a class="btn btn-primary btn-block" ng-click="toggleModal()">Play</a></span>
+                                    <uib-accordion-group heading="Technologies" is-open="status.openCLR">
+                                      <ul>
+                                            <li ng-repeat="tool in clara_tools">
+                                                <span><img class="accordion-logos" src="img/{{tool}}.png"><label class="tool-label">{{tool}}</label></span>
+                                            </li>
+                                        </ul>
+                                    </uib-accordion-group>
+                                    <span class="accordion-buttons"><a class="btn btn-block btn-success" href="">Home</a></span>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+
+                      
+                  </uib-accordion-group>
+              </uib-accordion>
+            </div>
+        </div>
+    </body>
+</html>
+
